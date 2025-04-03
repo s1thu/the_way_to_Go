@@ -28,6 +28,8 @@ func (g GenderStatus) getGenderStatus() string{
 
 // Function to demonstrate elementary types
 func elementary_types() {
+
+	fmt.Println("Elementary Types Start ==============")
 	// Boolean
 	var isGoFun bool = true
 	fmt.Println("Boolean:", isGoFun) // Output: Boolean: true
@@ -47,6 +49,16 @@ func elementary_types() {
 	// Complex Number
 	var complexNum complex128 = complex(3, 4)
 	fmt.Println("Complex Number:", complexNum) // Output: (3+4i)
+
+	var ch1 int = '\u0041'
+    var ch2 int = '\u03B2'
+    var ch3 int = '\U00101234'
+    fmt.Printf("%d - %d - %d\n", ch1, ch2, ch3)  // integer
+    fmt.Printf("%c - %c - %c\n", ch1, ch2, ch3)  // character
+    fmt.Printf("%X - %X - %X\n", ch1, ch2, ch3)  // UTF-8 bytes
+    fmt.Println("%U - %U - %U", ch1, ch2, ch3)    // UTF-8 code point
+
+	fmt.Println("Elementary Types End ==============")
 }
 
 func structure_types(){
