@@ -14,6 +14,8 @@ func main() {
 
 	m()
 	n()
+	test_function()
+	defer_tracing()
 }
 
 func n() {
