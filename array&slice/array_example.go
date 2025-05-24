@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main(){
+func array(){
 	var a = new([5]int) //declaration of an array
 	a[0] = 1 //initialization of an array
 	a[1] = 2
