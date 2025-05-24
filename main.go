@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 var a = "G"
 
 func main() {
@@ -16,6 +18,9 @@ func main() {
 	n()
 	test_function()
 	defer_tracing()
+
+	fmt.Print(task(7,9,3,5,1))
+	printrec(1)
 }
 
 func n() {
@@ -24,4 +29,26 @@ func n() {
 func m() {
 	a = "O"
 	print(a)
+}
+
+func task(a...int) int {
+    if len(a) == 0 {
+        return 0
+    }
+    value := a[0]
+    for _, v := range a {
+		fmt.Println(v)
+        if v < value {
+            value = v
+        }
+    }
+    return value
+}
+
+func printrec(i int) {
+    if i > 10 {
+        return
+    }
+    printrec(i + 1)
+    fmt.Printf("%d ", i)
 }
