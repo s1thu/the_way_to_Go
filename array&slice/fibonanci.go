@@ -21,4 +21,5 @@ func main() {
 
 	byte_learn()
 	reslicing()
+	challengReslice()
 }
