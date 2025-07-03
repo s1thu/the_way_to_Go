@@ -23,6 +23,18 @@ func NewPerson(name string, age int) *Person {
 	}
 }
 
+func (p *Person) SetName(name string) {
+	p.Name = name
+}
+
+func (p *Person) SetAge(age int) {
+	p.Age = age
+}
+
+func (p *Person) GetName() string {
+	return p.Name
+}
+
 type TagType struct { // tags
 	field1 bool   `info:"An important answer"`
 	field2 string `info:"The name of the thing"`
@@ -64,6 +76,11 @@ func main() {
 	fmt.Println("Anonymous struct:", a)
 	fmt.Println("Anonymous struct int field:", a.int)
 	fmt.Println("Anonymous struct string field:", a.string)
+
+	personone := Person{Name: "John", Age: 25}
+	persontwo := Person{Name: "Jane", Age: 30}
+	fmt.Println("Person One:", personone.GetName()) //method in go lang
+	fmt.Println("Person Two:", persontwo.GetName())
 }
 
 func refTag(tt TagType, ix int) {
