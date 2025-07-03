@@ -29,6 +29,11 @@ type TagType struct { // tags
 	field3 int    `info:"How much there are"`
 }
 
+type Anonymous struct {
+	int
+	string
+}
+
 func main() {
 	//a factory of a struct
 	p := NewPerson("Alice", 30)
@@ -54,6 +59,11 @@ func main() {
 	} else {
 		fmt.Println("Field not found")
 	}
+
+	a := Anonymous{int: 42, string: "Hello"}
+	fmt.Println("Anonymous struct:", a)
+	fmt.Println("Anonymous struct int field:", a.int)
+	fmt.Println("Anonymous struct string field:", a.string)
 }
 
 func refTag(tt TagType, ix int) {
