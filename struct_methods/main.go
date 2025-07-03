@@ -6,6 +6,18 @@ import (
 	"reflect"
 )
 
+type Camera struct{}
+
+func (c Camera) TakePhoto() { fmt.Println("Click") }
+
+type Phone struct{}
+
+func (p Phone) Call() { fmt.Println("Ring Ring") }
+
+type SmartPhone struct {
+	Camera
+	Phone
+}
 type Person struct {
 	Name string
 	Age  int
@@ -88,6 +100,10 @@ func main() {
 	carObj.SetYear(2021)
 	fmt.Println("Car Name:", carObj.Name)
 	fmt.Println("Car Year:", carObj.Year)
+
+	sp := SmartPhone{}
+	sp.TakePhoto() // calling method from embedded Camera struct
+	sp.Call()      // calling method from embedded Phone struct
 }
 
 func refTag(tt TagType, ix int) {
