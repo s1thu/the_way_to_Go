@@ -1,6 +1,7 @@
 package main
 
 import (
+	"car/car1/car"
 	"fmt"
 	"reflect"
 )
@@ -81,6 +82,12 @@ func main() {
 	persontwo := Person{Name: "Jane", Age: 30}
 	fmt.Println("Person One:", personone.GetName()) //method in go lang
 	fmt.Println("Person Two:", persontwo.GetName())
+
+	carObj := car.Car{} // creating a new car object
+	carObj.SetName("Honda")
+	carObj.SetYear(2021)
+	fmt.Println("Car Name:", carObj.Name)
+	fmt.Println("Car Year:", carObj.Year)
 }
 
 func refTag(tt TagType, ix int) {
