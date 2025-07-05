@@ -6,9 +6,22 @@ type Speaker interface {
 
 type Dog struct{}
 
+func (d *Dog) Speak() string {
+	return "Dog barks"
+}
+
 type Cat struct{}
 
+func (c *Cat) Speak() string {
+	return "Cat meows"
+}
+
 type Human struct{}
+
+func (h *Human) Speak() string {
+	return "Human speaks"
+}
+
 type Animal struct {
 	Dog
 	Cat
@@ -28,7 +41,8 @@ func (a Animal) Speak() string {
 
 func main() {
 	var s Speaker
-	s = Animal{}       // Assigning Animal to Speaker interface
+
+	s = &Dog{}         // Assigning Animal to Speaker interface
 	println(s.Speak()) // Output: Animal speaks
 
 }
