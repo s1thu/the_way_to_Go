@@ -1,25 +1,34 @@
 package main
 
-import "fmt"
-
-type Shaper interface {
-  Area() float32
+type Speaker interface {
+	Speak() string
 }
 
-type Square struct {
-  side float32
+type Dog struct{}
+
+type Cat struct{}
+
+type Human struct{}
+type Animal struct {
+	Dog
+	Cat
 }
 
-func (sq *Square) Area() float32 {
-  return sq.side * sq.side
+type NotAnimal struct {
+	Human
 }
 
-func main1() {
-  sq1 := new(Square)
-  sq1.side = 5
-  var areaIntf Shaper
-  areaIntf = sq1
-  // shorter, without separate declaration:
-  // areaIntf := Shaper(sq1)
-  fmt.Printf("The square has area: %f\n", areaIntf.Area())
+func (a NotAnimal) Speak() string {
+	return "NotAnimal speaks"
+}
+
+func (a Animal) Speak() string {
+	return "Animal speaks"
+}
+
+func main() {
+	var s Speaker
+	s = Animal{}       // Assigning Animal to Speaker interface
+	println(s.Speak()) // Output: Animal speaks
+
 }

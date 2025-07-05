@@ -1,0 +1,4 @@
+3
+{"type":"post","payload":"{\"id\":\"1\",\"name\":\"Inle Lake\",\"area\":116}"}
+{"type":"get","payload":"1"}
+{"type":"delete","payload":"1"}
