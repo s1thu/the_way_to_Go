@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Speaker interface {
 	Speak() string
 }
@@ -39,10 +41,18 @@ func (a Animal) Speak() string {
 	return "Animal speaks"
 }
 
+// empty interface
+func printAnything(i interface{}) {
+	fmt.Println(i)
+}
+
 func main() {
 	var s Speaker
 
 	s = &Dog{}         // Assigning Animal to Speaker interface
 	println(s.Speak()) // Output: Animal speaks
+
+	printAnything("hello")
+	printAnything(1)
 
 }
