@@ -55,4 +55,11 @@ func main() {
 	printAnything("hello")
 	printAnything(1)
 
+	//type asssertion
+	var i interface{} = "Go"
+	str, ok := i.(string)
+	if ok {
+		fmt.Println(str) // Go
+	}
+
 }
