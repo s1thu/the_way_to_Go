@@ -1,9 +1,10 @@
 package main
 
 import (
-	"car/car1/car"
 	"fmt"
 	"reflect"
+	"sithu/struct_methods/car"
+	"sithu/struct_methods/flower"
 )
 
 type Camera struct{}
@@ -100,6 +101,12 @@ func main() {
 	carObj.SetYear(2021)
 	fmt.Println("Car Name:", carObj.Name)
 	fmt.Println("Car Year:", carObj.Year)
+
+	flowerObj := flower.Flower{} // creating a new flower object
+	flowerObj.SetName("Rose")
+	flowerObj.SetColor("Red")
+	fmt.Println("Flower Name:", flowerObj.Name)
+	fmt.Println("Flower Color:", flowerObj.Color)
 
 	sp := SmartPhone{}
 	sp.TakePhoto() // calling method from embedded Camera struct
