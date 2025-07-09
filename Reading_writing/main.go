@@ -52,6 +52,13 @@ func main() {
 	fmt.Println(col2)
 	fmt.Println(col3)
 
+	//writing into files
+	os.Stdout.WriteString("hello, world\n")
+	f, _ := os.OpenFile("input.dat", os.O_CREATE|os.O_WRONLY, 0)
+	defer f.Close()
+
+	f.WriteString("hello, world in a file\n")
+
 	for {
 		inputString, readerError := inputReader.ReadString('\n')
 		if readerError == io.EOF {
